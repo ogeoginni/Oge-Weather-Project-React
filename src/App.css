@@ -4,6 +4,7 @@
 
 .container {
   background-color: #feeae3;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
@@ -85,14 +86,14 @@ li:first-letter {
 
 .Weather-units {
   font-size: 16px;
-  padding-right: 20px;
-  font-weight: 500;
+  padding-right: 0px;
+  font-weight: 600;
   position: relative;
   top: -20px;
 }
 
 .footer {
   background-color: #feeae3;
-  font-size: 18px;
+  font-size: 16px;
   color: #7c73e6;
 }
