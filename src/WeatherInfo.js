@@ -5,7 +5,7 @@ import WeatherTemperature from "./WeatherTemperature";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="Weather-city-name">{props.data.city}</div>
+      <div className="Weather-city-name"> 📍 {props.data.city}</div>
       <div className="Weather-description text-capitalize">
         {props.data.description}
       </div>

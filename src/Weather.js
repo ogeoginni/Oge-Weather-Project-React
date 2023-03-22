@@ -59,6 +59,7 @@ export default function Weather(props) {
       <div>
         <div className="row">
           <div className="col-8">
+            <br />
             Last updated:{" "}
             <span className="Weather-current-time">
               <FormattedDate date={weatherData.date} />
@@ -78,11 +79,6 @@ export default function Weather(props) {
                 type="submit"
                 value="Search"
                 className="Weather-search-button"
-              />
-              <input
-                type="button"
-                value="📍"
-                className="Weather-current-location-emoji"
               />
             </form>
           </div>
