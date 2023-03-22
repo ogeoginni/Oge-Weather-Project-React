@@ -3,7 +3,7 @@
 }
 
 .container {
-  background-color: #f5b4b4;
+  background-color: #feeae3;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ li:first-letter {
 
 .Weather-city-name {
   text-transform: capitalize;
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: 600;
   text-align: center;
   font-size: 25px;
@@ -40,8 +40,9 @@ li:first-letter {
 
 .Weather-description {
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
+  margin: 5px;
 }
 
 .Weather-search-button {
@@ -50,7 +51,7 @@ li:first-letter {
   border-radius: 30px;
   padding: 5px;
   height: 50px;
-  background: #f5b4b4;
+  background: #feeae3;
   border: 2px solid #662eed;
   text-align: center;
 }
@@ -60,7 +61,7 @@ li:first-letter {
   border-radius: 30px;
   padding: 5px;
   height: 50px;
-  background: #f5b4b4;
+  background: #feeae3;
   border: 2px solid #662eed;
   text-align: center;
   text-shadow: none;
@@ -69,13 +70,6 @@ li:first-letter {
 .Weather-current-location-emoji {
   font-size: 22px;
   background: none;
-  border: 2px solid #662eed;
-  border-radius: 30px;
-  padding: 5px;
-  height: 50px;
-  width: 10%;
-  text-align: center;
-  text-shadow: none;
 }
 
 .Weather-icon {
@@ -83,30 +77,22 @@ li:first-letter {
 }
 
 .Weather-main-temperature {
-  text-align: center;
-  font-size: 45px;
-  line-height: 100px;
+  font-size: 40px;
+  line-height: 80px;
+  justify-content: center;
+  align-items: center;
 }
 
 .Weather-units {
   font-size: 16px;
   padding-right: 20px;
-  font-weight: bold;
+  font-weight: 500;
   position: relative;
   top: -20px;
 }
 
-.Weather-condition-list {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 320;
-  line-height: 39px;
-  color: #6d42c7;
-}
-
 .footer {
-  background-color: #f5b4b4;
+  background-color: #feeae3;
   font-size: 18px;
-  color: #6d42c7;
+  color: #7c73e6;
 }
