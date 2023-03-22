@@ -1,47 +1,45 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { MagnifyingGlass } from "react-loader-spinner";
+import "./App.css";
+import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
-export default function Weather() {
-  const [city, setCity] = useState("");
-  const [answer, setAnswer] = useState("");
-  const [loaded, setLoaded] = useState(false);
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
-  function weatherDetails(response) {
-    setLoaded(true);
-    setAnswer({
-      name: response.data.name,
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
-      feeling: response.data.main.feels_like,
-      wind: response.data.wind.speed,
+      temp_max: response.data.main.temp_max,
+      temp_min: response.data.main.temp_min,
       humidity: response.data.main.humidity,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
     });
-    //console.log(response.data);
+  }
+
+  function search() {
+    let apiKey = `be786a95f466ebdeaee3f262be3e25cd`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(handleResponse);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "be786a95f466ebdeaee3f262be3e25cd";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(weatherDetails);
+    search(city);
   }
 
-  function updateCity(event) {
+  function citySearch(event) {
     setCity(event.target.value);
   }
-
-  let form = (
-    <form onSubmit={handleSubmit}>
-      <input
-        id="city-input"
-        type="search"
-        placeholder="Search for a city"
-        onChange={updateCity}
-      />
-      <input id="city-input" type="submit" value="Search" />
-    </form>
-  );
 
   let loading = (
     <MagnifyingGlass
@@ -56,31 +54,45 @@ export default function Weather() {
     />
   );
 
-  if (loaded) {
+  if (weatherData.ready) {
     return (
-      <div className="temp-description">
-        <ul>
-          <li>
-            {" "}
-            <h1>
-              <i className="fas fa-map-marker-alt"></i>
-            </h1>
-            <span className="current-city">{answer.name}</span>
-          </li>
-          <br />
-          <li>Temperature: {Math.round(answer.temperature)}°C</li>
-          <li>Feels like: {Math.round(answer.feeling)}°C</li>
-          <li>Humidity: {answer.humidity}%</li>
-          <li>Wind: {Math.round(answer.wind)} km/h</li>
-          <li>
-            <img src={answer.icon} alt={answer.description} />
-          </li>
-        </ul>
-        <br />
-        {form}
+      <div>
+        <div className="row">
+          <div className="col-8">
+            Last updated:{" "}
+            <span className="Weather-current-time">
+              <FormattedDate date={weatherData.date} />
+            </span>
+          </div>
+
+          <div className="col-4 Weather-search-form">
+            <form className="Weather-city-search" onSubmit={handleSubmit}>
+              <input
+                type="search"
+                placeholder="Enter a city"
+                className="Weather-enter-city"
+                autoFocus="on"
+                onChange={citySearch}
+              />
+              <input
+                type="submit"
+                value="Search"
+                className="Weather-search-button"
+              />
+              <input
+                type="button"
+                value="📍"
+                className="Weather-current-location-emoji"
+              />
+            </form>
+          </div>
+        </div>
+        <WeatherInfo data={weatherData} />
+        <hr />
       </div>
     );
   } else {
-    return [loading, form];
+    search();
+    return [loading];
   }
 }

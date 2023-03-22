@@ -5,8 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1></h1>
-        <Weather />
+        <Weather defaultCity="Abuja" />
         <br />
         <small className="footer">
           Designed and coded by Ogechukwu Oginni | Open-sourced on{" "}
