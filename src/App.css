@@ -83,6 +83,10 @@ li:first-letter {
   margin-top: 10px;
 }
 
+.degrees strong {
+  font-size: x-large;
+}
+
 .degrees .units .celsius-link {
   cursor: default;
   text-decoration: none;
