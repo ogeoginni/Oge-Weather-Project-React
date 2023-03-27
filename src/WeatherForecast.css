@@ -2,7 +2,14 @@
   text-align: center;
 }
 
-.WeatherForecast-day,
-.WeatherForecast-temperature-max {
-  font-weight: bold;
+.forecast-title {
+  font-weight: 640;
+}
+
+.forecast-title .forecast-units {
+  opacity: 0.5;
+}
+
+.WeatherForecast-day {
+  font-weight: 600;
 }

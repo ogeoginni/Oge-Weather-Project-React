@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color: #feeae3;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .container {
@@ -74,22 +80,17 @@ li:first-letter {
 }
 
 .Weather-icon {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
-.Weather-main-temperature {
-  font-size: 40px;
-  line-height: 80px;
-  justify-content: center;
-  align-items: center;
+.degrees .units .celsius-link {
+  cursor: default;
+  text-decoration: none;
 }
 
-.Weather-units {
-  font-size: 16px;
-  padding-right: 0px;
-  font-weight: 600;
-  position: relative;
-  top: -20px;
+.degrees .units .fahrenheit-link {
+  cursor: default;
+  text-decoration: none;
 }
 
 .forecast-title {
@@ -110,8 +111,20 @@ li:first-letter {
   font-size: 25px;
 }
 
+.WeatherForecastDay .WeatherForecast-temperature-max {
+  font-size: 25px;
+  opacity: 0.9;
+  font-weight: 350;
+}
+
+.WeatherForecast-temperature-min {
+  font-weight: 200;
+  opacity: 0.5;
+}
+
 .footer {
   background-color: #feeae3;
   font-size: 16px;
+  opacity: 0.8;
   color: #7c73e6;
 }

@@ -20,7 +20,7 @@ export default function Units(props) {
         <span className="units">
           {" "}
           °C |{" "}
-          <a href="/" onClick={showFahrenheit}>
+          <a className="celsius-link" href="/" onClick={showFahrenheit}>
             °F
           </a>
         </span>
@@ -32,7 +32,7 @@ export default function Units(props) {
       <div className="degrees">
         <strong>{Math.round(fahrenheitTemp)}</strong>
         <span className="units">
-          <a href="/" onClick={showCelsius}>
+          <a className="fahrenheit-link" href="/" onClick={showCelsius}>
             °C
           </a>{" "}
           | °F
