@@ -87,7 +87,7 @@ export default function Weather(props) {
         <WeatherInfo data={weatherData} />
         <hr />
         <h3 className="forecast-title">
-          Forecast for the week <span className="forecast-units"> °C </span>
+          Forecast for the week <span className="forecast-units">°C </span>
         </h3>
         <hr />
         <WeatherForecast coordinates={weatherData.coordinates} />

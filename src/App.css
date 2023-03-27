@@ -1,20 +1,20 @@
 .App {
-  text-align: center;
-  background-color: #feeae3;
+  background-image: url("./images/BeachBackground.jpg");
   background-size: cover;
   background-position: center center;
+  margin: 30px;
+  border-radius: 25px;
+  text-align: center;
   background-repeat: no-repeat;
   min-height: 100%;
   overflow: hidden;
 }
 
 .container {
-  background-color: #feeae3;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: #6d42c7;
 }
 
