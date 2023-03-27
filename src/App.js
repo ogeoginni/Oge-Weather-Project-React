@@ -7,6 +7,7 @@ function App() {
       <header className="container">
         <Weather defaultCity="Abuja" />
         <br />
+        <br />
         <small className="footer">
           Designed and coded by Ogechukwu Oginni | Open-sourced on{" "}
           <a

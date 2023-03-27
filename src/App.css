@@ -58,7 +58,7 @@ li:first-letter {
   border-radius: 30px;
   padding: 5px;
   height: 50px;
-  background: #feeae3;
+  background: #dad5cf;
   border: 2px solid #662eed;
   text-align: center;
 }
@@ -68,7 +68,7 @@ li:first-letter {
   border-radius: 30px;
   padding: 5px;
   height: 50px;
-  background: #feeae3;
+  background: #dad5cf;
   border: 2px solid #662eed;
   text-align: center;
   text-shadow: none;
@@ -123,8 +123,7 @@ li:first-letter {
 }
 
 .footer {
-  background-color: #feeae3;
   font-size: 16px;
   opacity: 0.8;
-  color: #7c73e6;
+  color: #63508b;
 }
