@@ -4,13 +4,14 @@ import { MagnifyingGlass } from "react-loader-spinner";
 import "./App.css";
 import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
+    //console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -85,6 +86,11 @@ export default function Weather(props) {
         </div>
         <WeatherInfo data={weatherData} />
         <hr />
+        <h3 className="forecast-title">
+          Forecast for the week <span className="forecast-units"> °C </span>
+        </h3>
+        <hr />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

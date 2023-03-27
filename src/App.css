@@ -92,6 +92,24 @@ li:first-letter {
   top: -20px;
 }
 
+.forecast-title {
+  font-style: italic;
+  text-align: center;
+  font-size: 25px;
+}
+
+.WeatherForecast .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.WeatherForecastDay {
+  font-style: italic;
+  text-align: center;
+  font-size: 25px;
+}
+
 .footer {
   background-color: #feeae3;
   font-size: 16px;
